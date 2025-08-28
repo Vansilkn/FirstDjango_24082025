@@ -39,7 +39,8 @@ def about(request):
     return HttpResponse(text)
 
 
-def get_items(request, item_id:int):
+def get_item(request, item_id:int):
+    """ Выводим данные словаря (который вложенный в список) по значению id"""
     for item in items:
         if item["id"] == item_id:
             text = f"""
@@ -62,4 +63,14 @@ def get_items(request, item_id:int):
             """
             return HttpResponse(text)
     return HttpResponseNotFound(f'Товар с id={item_id} не найден')
-    
+
+
+def get_items(request):
+    """ Выводим данные по значению id """
+    text = '<h1>Список всех товаров:</h1><ol>'
+    for item in items:
+        text += f"""<li>{item['name']}</a></li>"""
+    text += "</ol>"
+    return HttpResponse(text)
+
+
