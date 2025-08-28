@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseNotFound
 
 
 user_dt = {
@@ -39,9 +39,9 @@ def about(request):
     return HttpResponse(text)
 
 
-def get_items(request, items_id:int):
+def get_items(request, item_id:int):
     for item in items:
-        if item["id"] == items_id:
+        if item["id"] == item_id:
             text = f"""
                 <div style="font-family:Impact,Arial, Verdana;
                             font-size: 18px;
@@ -61,4 +61,5 @@ def get_items(request, items_id:int):
                 </div>
             """
             return HttpResponse(text)
+    return HttpResponseNotFound(f'Товар с id={item_id} не найден')
     
