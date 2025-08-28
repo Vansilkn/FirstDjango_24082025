@@ -69,7 +69,7 @@ def get_items(request):
     """ Выводим данные по значению id """
     text = '<h1>Список всех товаров:</h1><ol>'
     for item in items:
-        text += f"""<li>{item['name']}</a></li>"""
+        text += f"""<li><a href = "/item/{item['id']}">{item['name']}</a></li>"""
     text += "</ol>"
     return HttpResponse(text)
 
