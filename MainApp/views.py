@@ -60,9 +60,16 @@ def get_item(request, item_id:int):
                         Количество: <i><u  style="color: red">{item['quantity']}</u></i>
                     </p>
                 </div>
+                <a href="/item/{item_id if item_id-1 == 0 else item_id-1}">&lt Назад &gt</a>         
+                <a href="http://127.0.0.1:8000/items">&lt Назад к списку товаров &gt</a>
+                <a href="/item/{item_id+1}">&lt Вперед  &gt</a>
             """
             return HttpResponse(text)
-    return HttpResponseNotFound(f'Товар с id={item_id} не найден')
+    return HttpResponseNotFound(f"""<p>Товар с id={item_id} не найден</p><br>
+                <a href="/item/{item_id if item_id-1 == 0 else item_id-1}">&lt Назад &gt</a>         
+                <a href="http://127.0.0.1:8000/items">&lt Назад к списку товаров &gt</a>
+                <a href="/item/{item_id+1}">&lt Вперед &gt</a>"""
+                                )
 
 
 def get_items(request):
