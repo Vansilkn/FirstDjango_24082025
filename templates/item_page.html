@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Item page</title>
+    <style>		
+        .menu{
+            padding: 2px;
+            overflow: auto;
+        }
+        .menu li:nth-child(1){
+            border-right: 1px solid;
+            padding-right: 10px;
+		}
+		.menu li:nth-child(2){
+            border-right: 1px solid;
+            padding-right: 10px;
+		}
+		.menu li:nth-child(3){
+            border-right: 1px solid;
+            padding-right: 10px;
+		}
+		.menu li:nth-child(4){
+            border-right: 1px solid;
+            padding-right: 10px;
+		}
+	    .menu li{
+            float: left;
+            margin: 5px;
+            list-style: none;
+            text-transform: uppercase;
+	    }
+
+        .div_bloc{
+            font-family:Impact,Arial, Verdana;
+            font-size: 18px;
+            border: 1px solid red;
+            border-radius: 20px;
+            background: #d9d9d9;
+            width: calc(30%);
+            min-width: 200px;
+            padding: 10px
+        }
+        u {
+            color: red
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul class="menu">
+                <li><a href="">Home</a></li>
+                <li><a href="/items">Items</a></li>
+                <li><a href="/about">About</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class = "div_bloc">
+        <p>Имя: <i><u>{{item.name}}</u></i></p>
+        {% if item.quantity == 0 %}
+            <p>Количество: <i><u>товар отсутствует</u></i></p>
+        {% else %}
+            <p>Количество: <i><u>{{item.quantity}}</u></i></p>
+        {% endif %}
+    </div>
+    <hr>
+    <a href="/items">&lt Назад к списку товаров &gt</a>
+</body>
+</html>

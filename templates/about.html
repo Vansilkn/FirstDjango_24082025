@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About</title>
+    <style>		
+        .menu{
+            padding: 2px;
+            overflow: auto;
+        }
+        .menu li:nth-child(1){
+            border-right: 1px solid;
+            padding-right: 10px;
+		}
+		.menu li:nth-child(2){
+            border-right: 1px solid;
+            padding-right: 10px;
+		}
+		.menu li:nth-child(3){
+            border-right: 1px solid;
+            padding-right: 10px;
+		}
+		.menu li:nth-child(4){
+            border-right: 1px solid;
+            padding-right: 10px;
+		}
+	    .menu li{
+            float: left;
+            margin: 5px;
+            list-style: none;
+            text-transform: uppercase;
+	    }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul class="menu">
+                <li><a href="">Home</a></li>
+                <li><a href="/items">Items</a></li>
+                <li><a href="/about">About</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div>
+        <h1>Страница автора</h1>
+        <p>Имя: <b>{{user_dt.name}}</b></p>
+        <p>Отчество: <b>{{user_dt.patronymic}}</b></p>
+        <p>Фамилия: <b>{{user_dt.surname}}</b></p>
+        <p>телефон: <b>{{user_dt.phone}}</b></p>
+        <p>email: <b>{{user_dt.email}}</b></p>
+    </div>
+</body>
+</html>
