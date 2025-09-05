@@ -36,7 +36,7 @@ def about(request):
 
 
 def get_item(request, item_id:int ):
-    """ Выводим данные словаря (который вложенный в список) по значению id"""
+    """ TODO: get alitem by id from db. """
     for item in items:
         if item["id"] == item_id:
             context = {
@@ -47,7 +47,7 @@ def get_item(request, item_id:int ):
 
 
 def get_items(request):
-    """ Выводим данные по значению id """
+    """ TODO: get all items from db. """
     context = {
         'items': items
     } 
