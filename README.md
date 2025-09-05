@@ -13,9 +13,21 @@ sourse django_venv/bin/activate
 
 pip instal -r requirements.txt
 
-4.Запуск сервера
+4.Применить миграцию
+'''
+python manage.py migrate
+'''
 
+5.Запуск сервера
+'''
 python manage.py runserver
+'''
+
+## Запуск  'ipython' в контехте 'django' приложений
+'''
+python manage.py shell_plus --ipython
+'''
+
 
 ## Дополнительно
 1. полезное разширение для шаблонов: 'django'
