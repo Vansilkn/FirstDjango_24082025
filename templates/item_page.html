@@ -62,8 +62,10 @@
         {% if item.quantity == 0 %}
             <p>Количество: <i><u>товар отсутствует</u></i></p>
         {% else %}
-            <p>Количество: <i><u>{{item.quantity}}</u></i></p>
+            <p>Бренд: <i><u>{{item.brand}}</u></i></p>
+            <p>Количество: <i><u>{{item.count}}</u></i></p>
         {% endif %}
+       
     </div>
     <hr>
     <a href="/items">&lt Назад к списку товаров &gt</a>
