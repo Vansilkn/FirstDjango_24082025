@@ -36,7 +36,6 @@ def get_item(request, item_id:int ):
     else:
         context = {"item": item} 
         return render(request, "item_page.html", context)
-    
 
 
 def get_items(request):
