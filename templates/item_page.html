@@ -1,13 +1,19 @@
 {% extends "base.html" %}
 
+{% load static %}
+
 {% block title %}Item page{% endblock %}
+
+{% block style %}
+    <link rel="stylesheet" href="{% static "MainApp/color.css" %}">
+{% endblock  %}
 
 {% block content %}
     {{ block.super }}
 
     <div class = "div_bloc">
         <div class="">
-            <p>Имя: <i><u>{{item.name}}</u></i></p>
+            <p>Имя: <i><u>{{item.name | capfirst}}</u></i></p>
         </div>
         <div class="">
             <p>Бренд: <i><u>{{item.brand}}</u></i></p>
@@ -18,13 +24,20 @@
         <div class="">
             <p>Описание: <i><u>{{item.description}}</u></i></p>
         </div>
+        <h3>Цвета:</h3>
+        <ul class="ul_no_mark">
+            {% for color in colors %}
+                <li>
+                    <span class="color-box" style="background-color: {{color.name}};"></span>  {{ color.name }}
+                </li>
+            {% empty %}
+                <p> Информация по цветам отсутствует.</p>
+            {% endfor %}
+        </ul>
+
     </div>
     <br><hr>
 
-    {% include "footer.html" %}
+    {% include "inc_1.html" %}
 
 {% endblock  %}
-
-
-
-
