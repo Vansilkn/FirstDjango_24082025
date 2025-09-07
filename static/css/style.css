@@ -73,3 +73,17 @@
     row-gap: 40px; /* Отступ между рядами */
     margin: 0 auto;
   }
+
+.div_bloc{
+    font-family:Impact,Arial, Verdana;
+    font-size: 18px;
+    border: 1px solid red;
+    border-radius: 20px;
+    background: #d9d9d9;
+    width: calc(30%);
+    min-width: 200px;
+    padding: 10px
+}
+u {
+    color: red
+}
